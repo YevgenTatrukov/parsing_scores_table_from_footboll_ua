@@ -75,22 +75,21 @@ for scores_name, scores_href in all_scores.items():
         soup = BeautifulSoup(src, "lxml")
 
         """ Знаходимо всі назви стовбців таблиці та зберігаємо їх в змінних"""
-        place = soup.find(class_="main-tournament-table").find(class_="num").text
-        date = soup.find(class_="main-tournament-table").find(class_="date").text
-        changed_date_str_digit = ''
-        changed_date_str_digit
-
-        for item in date:
+        all_table = soup.find(class_="main-tournament-table").find_all("tr")
+        all_table_title = all_table[0]
+        place = all_table_title.find(class_='num').text
+        date = ''
+        for item in all_table_title.find(class_='date').text:
             if item.isdigit() or item.isalpha():
-                changed_date_str_digit += item
-        games = soup.find(class_="main-tournament-table").find(class_="games").text
-        win = soup.find(class_="main-tournament-table").find(class_="win").text
-        draw = soup.find(class_="main-tournament-table").find(class_="draw").text
-        lose = soup.find(class_="main-tournament-table").find(class_="lose").text
-        goal = soup.find(class_="main-tournament-table").find(class_="goal").text
-        miss = soup.find(class_="main-tournament-table").find(class_="miss").text
-        diff = soup.find(class_="main-tournament-table").find(class_="diff").text
-        score = soup.find(class_="main-tournament-table").find(class_="score").text
+                date += item
+        games = all_table_title.find(class_='games').text
+        win = all_table_title.find(class_='win').text
+        draw = all_table_title.find(class_='draw').text
+        lose = all_table_title.find(class_='lose').text
+        goal = all_table_title.find(class_='goal').text
+        miss = all_table_title.find(class_='miss').text
+        diff = all_table_title.find(class_='diff').text
+        score = all_table_title.find(class_='score').text
 
         """ Збираємо усі стовбці у файл csv"""
         with open(f"data/{count}_{scores_name}.csv", "w") as file:
@@ -98,7 +97,7 @@ for scores_name, scores_href in all_scores.items():
             writer.writerow(
                 (
                     place,
-                    changed_date_str_digit,
+                    date,
                     games,
                     win,
                     draw,
@@ -110,78 +109,12 @@ for scores_name, scores_href in all_scores.items():
                 )
             )
         """ Знаходимо всі назви рядків таблиці та зберігаємо їх в змінних"""
-        # teem_place = soup.find(class_="main-tournament-table").find_all(class_="num")
-        # title_teem = teem_place[1:]
-        # teem_name = soup.find(class_="main-tournament-table").find_all('a')
-        # games = soup.find(class_="main-tournament-table").find_all(class_="games")
-        # title_games = games[1:]
-        # win = soup.find(class_="main-tournament-table").find_all(class_="win")
-        # title_win = win[1:]
-        # draw = soup.find(class_="main-tournament-table").find_all(class_="draw")
-        # title_draw = draw[1:]
-        # lose = soup.find(class_="main-tournament-table").find_all(class_="lose")
-        # title_lose = lose[1:]
-        # goal = soup.find(class_="main-tournament-table").find_all(class_="goal")
-        # title_goal = goal[1:]
-        # miss = soup.find(class_="main-tournament-table").find_all(class_="miss")
-        # title_miss = miss[1:]
-        # diff = soup.find(class_="main-tournament-table").find_all(class_="diff")
-        # title_diff = diff[1:]
-        # score = soup.find(class_="main-tournament-table").find_all(class_="score")
-        # title_score = score[1:]
-        #
-        # list_for_all_teem = []
-        #
-        # for i_elem in title_teem:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_teem = k_elem
-        #
-        # for i in teem_name:
-        #     title = i.text
-        #
-        # for i_elem in title_games:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_games = k_elem
-        #
-        # for i_elem in title_win :
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_win = k_elem
-        #
-        # for i_elem in title_draw:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_draw = k_elem
-        #
-        # for i_elem in title_lose:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_lose = k_elem
-        #
-        # for i_elem in title_goal:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_goal = k_elem
-        #
-        # for i_elem in title_miss:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_miss = k_elem
-        #
-        # for i_elem in title_diff:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_diff = k_elem
-        #
-        # for i_elem in title_score:
-        #     for k_elem in i_elem:
-        #         if k_elem.isdigit():
-        #             title_score = k_elem
+        all_table_body = all_table[1:]
+        for item in all_table_body:
+            teem_tds = item.find_all_next('td')
 
-        place_1 = soup.find(class_="main-tournament-table").find_all("tr")
-        title = place_1[1:]
-        print(title)
+            place = teem_tds[0].text
+            teem = teem_tds[2].find('a').text
+            # print(teem_tds[10].text)
 
         count += 1
