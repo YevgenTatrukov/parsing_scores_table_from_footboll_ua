@@ -9,7 +9,7 @@ import time
 
 """ Збираємо данні про сайт який будемо парсити """
 # url = "https://football.ua/"
-#
+
 headers = {
     "accept": "*/*",
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
@@ -21,12 +21,20 @@ headers = {
 # src = req.text
 
 """ Зберігаємо данні з сторінки в html файлі """
-# with open("index.html", "w") as file:
-#     file.write(src)
+# try:
+#     with open("index.html", "w") as file:
+#         file.write(src)
+# except Exception as ex:
+#     print(ex)
+#     print("Ой щось пішло не так ")
 
 """ Відкриваємо збережений html файл та надалі працюємо з ним """
-# with open("index.html") as file:
-#     src = file.read()
+# try:
+#     with open("index.html") as file:
+#         src = file.read()
+# except Exception as ex:
+#     print(ex)
+#     print("Ой!!!...")
 
 """ Передаємо усі данні з файлу бібліотеці BeautifulSoup, використовуючи бібліотеку lxml яка оброблює html """
 # soup = BeautifulSoup(src, "lxml")
@@ -51,13 +59,21 @@ headers = {
 #
 """ Створюємо json файл в якій збережемо наш словник с країною та посиланням
 (indent=2 - відступи від краю, ensure_ascii=False- щоб не було проблем з кирилицею) """
-# with open("all_country_dict.json", 'w') as file:
-#     json.dump(all_country_dict, file, indent=2, ensure_ascii=False)
+# try:
+#     with open("all_country_dict.json", 'w') as file:
+#         json.dump(all_country_dict, file, indent=2, ensure_ascii=False)
+# except Exception as ex:
+#     print(ex)
+#     print("Вибачте, не можу!")
 
 
 """ Відкриваємо json файл та працюємо з ним """
-with open("all_country_dict.json") as file:
-    all_scores = json.load(file)
+try:
+    with open("all_country_dict.json") as file:
+        all_scores = json.load(file)
+except Exception as ex:
+    print(ex)
+    print("Ну ви самі усе бачите")
 
 
 iteration_count = int(len(all_scores)) - 1
@@ -71,12 +87,20 @@ for scores_name, scores_href in all_scores.items():
     src = req.text
 
     """ Створюємо html файли сторінок з посилань json файлу """
-    # with open(f"data/{count + 1}_{scores_name}.html", "w") as file:
-    #     file.write(src)
+    # try:
+    #     with open(f"data/{count + 1}_{scores_name}.html", "w") as file:
+    #         file.write(src)
+    # except Exception as ex:
+    #     print(ex)
+    #     print("ОЙ лишенько!")
 
     """ Відкриваємо html файл та працюємо з ним """
-    # with open(f"data/{count + 1}_{scores_name}.html") as file:
-    #     src = file.read()
+    # try:
+    #     with open(f"data/{count + 1}_{scores_name}.html") as file:
+    #         src = file.read()
+    # except Exception as ex:
+    #     print(ex)
+    #     print("ОЙ лишенько!")
 
     """ Передаємо усі данні з файлу бібліотеці BeautifulSoup, використовуючи бібліотеку lxml яка оброблює html """
     soup = BeautifulSoup(src, "lxml")
@@ -96,22 +120,26 @@ for scores_name, scores_href in all_scores.items():
     score = all_table_title.find(class_='score').text
 
     """ Збираємо усі стовбці у файл csv """
-    with open(f"data/{count + 1}_{scores_name}.csv", "w") as file:
-        writer = csv.writer(file)
-        writer.writerow(
-            (
-                place,
-                date,
-                games,
-                win,
-                draw,
-                lose,
-                goal,
-                miss,
-                diff,
-                score
+    try:
+        with open(f"data/{count + 1}_{scores_name}.csv", "w") as file:
+            writer = csv.writer(file)
+            writer.writerow(
+                (
+                    place,
+                    date,
+                    games,
+                    win,
+                    draw,
+                    lose,
+                    goal,
+                    miss,
+                    diff,
+                    score
+                )
             )
-        )
+    except Exception as ex:
+        print(ex)
+        print("Ось так ось")
 
     """ Знаходимо всі назви рядків таблиці та зберігаємо їх в змінних """
     all_table_body = all_table[1:]
@@ -135,22 +163,26 @@ for scores_name, scores_href in all_scores.items():
         score = all_tds[10].text
 
         """ Дозаписуємо отриманні данні у вже існуючий csv файл """
-        with open(f"data/{count + 1}_{scores_name}.csv", "a") as file:
-            writer = csv.writer(file)
-            writer.writerow(
-                (
-                    place,
-                    teem,
-                    games,
-                    win,
-                    draw,
-                    lose,
-                    goal,
-                    miss,
-                    diff,
-                    score
+        try:
+            with open(f"data/{count + 1}_{scores_name}.csv", "a") as file:
+                writer = csv.writer(file)
+                writer.writerow(
+                    (
+                        place,
+                        teem,
+                        games,
+                        win,
+                        draw,
+                        lose,
+                        goal,
+                        miss,
+                        diff,
+                        score
+                    )
                 )
-            )
+        except Exception as ex:
+            print(ex)
+            print("Горе біда")
 
         """ Додаємо до списку словник для створення json файлу """
         table_info.append(
@@ -169,8 +201,12 @@ for scores_name, scores_href in all_scores.items():
         )
 
     """ Записуємо список до json файлу """
-    with open(f"data/{count + 1}_{scores_name}.json", "a") as file:
-        json.dump(table_info, file, indent=2, ensure_ascii=False)
+    try:
+        with open(f"data/{count + 1}_{scores_name}.json", "a") as file:
+            json.dump(table_info, file, indent=2, ensure_ascii=False)
+    except Exception as ex:
+        print(ex)
+        print("Зробив що міг")
 
     """ Залишок коду """
     count += 1
