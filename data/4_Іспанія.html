@@ -6,10 +6,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="icon" href="/images/football.ico" type="image/x-icon" />
-    <title>Чемпионат Україна. Прем'єр-ліга : турнирная таблица &mdash; football.ua</title>
+    <title>Чемпионат Іспанія. Ла Ліга: турнирная таблица &mdash; football.ua</title>
 
-
-    <meta name="description" content="Турнирная таблица Украинской Премьер-лиги. Позиции команд, очки, поражения, победы, разница забитых голов." />
 
 
     <link rel="stylesheet" type="text/css" href="https://football.ua/tpl/football/css/main.css?v=20191216-1" />
@@ -43,22 +41,22 @@
     <script type="text/javascript" src="https://football.ua/js/jq/jquery.tmpl.js"></script>
     <script type="text/javascript" src="https://football.ua/js/jq/jquery.jsonp-2.4.0.min.js"></script>
     <script type="text/javascript" src="https://football.ua/js/Main.js?v=20200312"></script>
-
+    
     <script type="text/javascript">
         if (isMacLike) {
             document.write('<link rel="stylesheet" href="https://football.ua/tpl/football/css/mac-fonts.css?v=20130120" type="text/css" />');
         }
     </script>
-
+    
     <script id="LoginUser" type="text/x-jquery-tmpl">
-{{if $data.UserName != null}}
+{{if $data.UserName != null}} 
 	<li><a href="${$data.LinkProfile}" class="user-name" >${$data.UserName}</a></li>
 	<li><a href="${$data.LinkEmail}">Почта</a></li>
-    <li><a href="#" onclick="Login.Logout(); return false;"> Выход </a></li>
+    <li><a href="#" onclick="Login.Logout(); return false;"> Выход </a></li> 
 {{else}}
     <li><a href="#" id="enter-link">Войти</a></li>
     <li><a href="#" id="reg-link">Регистрация</a></li>
-{{/if}}
+{{/if}} 
 </script><script id="CommentTmpl" type="text/x-jquery-tmpl">
     <article id="comment_${$item.Prefix}${$data.Id}" class="comment-item">
         <p class="date">${Main.GetVerbalDateTime($data.DateCreated)}<a href="#comment_${$data.Id}" class="num">#</a></p>
@@ -82,10 +80,10 @@
         {{/if}}
         <p class="comment-text">{{html $data.Text}}</p>
         <a href="#" class="like
-            {{if !$item.UserIsLoginned}}
+            {{if !$item.UserIsLoginned}} 
                 inactive" onclick="return false;"
-            {{else}}
-                {{if $data.IsRatedByCurrentUser }}
+            {{else}} 
+                {{if $data.IsRatedByCurrentUser }} 
                     active" onclick="return false;"
                 {{else}}
                     " onclick="ModComment.Like('${$data.Id}', this); return false;"
@@ -280,11 +278,11 @@
                 <i></i>
                 <span>${$value.Name}</span>
             </label>
-        </li>
+        </li> 
         {{/each}}
-        <li class="vote-links">
+        <li class="vote-links">   
             <input type="button" class="vote" value="Проголосовать" onclick="ModOpenNews.NewsVote(${$data.Id}, $('input[name=NewsVote${$data.Id}]:checked').val()); return false;">
-        </li>
+        </li>    
     {{/if}}
     </ul>
 {{/if}}
@@ -293,7 +291,7 @@
         {{each $data.Answers}}
             <li id="NewsVoteAnswer${$value.Id}">
                 <p class="sum">
-                    (${$value.CountVotes})
+                    (${$value.CountVotes}) 
                     <span>
                         {{if $value.CountVotes}}${Math.round($value.CountVotes / $data.CountVotes * 1000) / 10}{{else}}0{{/if}}%
                     </span>
@@ -364,7 +362,7 @@
     {{if $value.SeasonTeamId == $value.SeasonTeamId1}}
             д
     {{else $value.SeasonTeamId == $value.SeasonTeamId2}}
-            г
+            г 
     {{/if}}
         </td>
         <td class="enemy">
@@ -394,9 +392,9 @@
                     <i>(${$value.PenaltyCount})</i>
         {{/if}}
                 </span>
-    {{else}}
-                ${$value.TotalGoals}
-    {{/if}}
+    {{else}}            
+                ${$value.TotalGoals}                    
+    {{/if}}             
         </td>
         <td class="goal-pass {{if $value.GoalPass == 0}}zero{{/if}}">${$value.GoalPass}</td>
         <td class="goal-plus-pass {{if $value.GoalPassGoalStat == 0}}zero{{/if}}">${$value.GoalPassGoalStat}</td>
@@ -481,7 +479,7 @@
             </a>
             <i>${$value.Name}</i>
         </div>
-    {{/if}}
+    {{/if}} 
 {{/each}}
 </div>
 </script><link rel="alternate" type="application/rss+xml" title="Football.ua :: лента новостей" href="/rss2.ashx" />
@@ -507,12 +505,12 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
+ 
   gtag('config', 'UA-434940-1');
 </script>
 
 
-
+    
 </head>
 <body>
     <!-- Adpartner close button style code -->
@@ -582,7 +580,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 
 
 <script>(function() {
-
+	
 	var branding = {
 		padTop:130,
 		bgColor:'#fff',
@@ -591,7 +589,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 		hwMed:false,
 		hideSocial:false
 	};
-
+	
 	function addEvent(e,t,f){
 		if (e.addEventListener) {
 			e.addEventListener(t, f, false);
@@ -600,7 +598,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 			e.attachEvent('on'+t, f);
 		}
 	}
-
+	
 	function removeEvent(e,t,f){
 		if (e.removeEventListener) {
 			e.removeEventListener(t, f, false);
@@ -609,7 +607,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 			e.detachEvent('on'+t, f);
 		}
 	}
-
+	
 	addEvent(window,"message", catchMsg);
 	function catchMsg(e) {
 		if (typeof e.data == 'string') {
@@ -638,7 +636,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 			}
 		}
 	}
-
+	
 	function loadBranding() {
 
 		var html_brnd,
@@ -663,7 +661,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 				break;
 			}
 		}
-
+		
 		if (html_brnd) {
 			if (html_brnd.firstChild) {
 				html_brnd_first = html_brnd.firstChild;
@@ -672,28 +670,28 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 		} else {
 			console.log('Function loadBranding stopped');
 			console.log('Place holder id for TOP banner is not found in topId array');
-			return;
+			return;	
 		}
-
+		
 		var $body = $('body'),
 			$wrapper = $('#wrapper'),
 			$header = $('header', $wrapper),
 			$headerWrap = $('.header-wrap', $header),
 			$topBanner = $('.top-banner', $headerWrap),
 			$footer = $('footer');
-
+			
 		$body.append($(html_brnd));
 		$('body').css({'background-color':branding.bgColor});
 		$(html_brnd).css({'top':'0px','position':'fixed','width':'100%','height':'100%','overflow': 'hidden','z-index':0,'max-width':'100%','max-height':'100%','min-width':'100%','min-height':'100%'});
-
+		
 		if ($('#ctl00_basement').length) {
 			$('#ctl00_basement').css({'background-color':'#fff'});
 		}
-
+		
 		if ($('.columnBlock').length) {
 			$('.columnBlock').css({'background-color':'#F2F2F2'});
 		}
-
+		
 		$footer.css({'background-color':'#F2F2F2'});
 		$wrapper.css({ 'width': '1090px', 'margin-top': branding.padTop+'px', 'z-index':1});
 		$header.css('margin', '0 -5px');
@@ -701,7 +699,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 		$topBanner.css({'padding': '0', 'margin': '0'});
 
 		function addHealthWarning() {
-
+			
 			var hwDiv = document.createElement('div');
 			$footer.before($(hwDiv));
 			$(hwDiv).css({
@@ -720,13 +718,13 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 				'background-size': 'contain'
 			});
 		}
-
+		
 		if (branding.hwAlco || branding.hwMed) {
 			addHealthWarning();
-		}
+		}				
 
-	}
-
+	}	
+	
 })();
 </script>
 
@@ -737,16 +735,20 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
     <script type="text/javascript">
         UserNotificationDiv = $('#UserNotification');
         UserNotificationInit();
-
+    
     </script>
 
     <div id="wrapper">
 
-    <form name="aspnetForm" method="post" action="/ukraine/table.html" id="aspnetForm">
+    <form name="aspnetForm" method="post" action="/spain/table.html" id="aspnetForm">
 <div>
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MWRkb6WcLDPXcf5KUJ5ed8H/Z6j06Z70AtzM0XP3bg04HNU=" />
 </div>
 
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
         <script type="text/javascript">
         //<![CDATA[
             if (theForm == null || theForm == undefined) {
@@ -771,7 +773,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 
 
 ">
-<div id="holder_728x90_88"></div>
+<div id="holder_728x90_56"></div>
 
 </div></div>
             <div class="header-top wrapper">
@@ -784,7 +786,7 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
                     </ul> <!--header-social-->
                 </div>
                 <div class="header-right">
-
+                    
 <ul class="enter registerArea">
 	<li><a id="enter-link" href="#">Войти</a></li>
 	<li><a id="reg-link" href="#">Регистрация</a></li>
@@ -795,12 +797,12 @@ function gemius_pending(i) { window[i] = window[i] || function() {var x = window
 <script type="text/javascript">
 Login.MinRequiredPasswordLength = 4;
 Login.AgreementLink = 'https://football.ua/profile/agreement/';
-Login.SiteName = 'football.ua';
-</script>
+Login.SiteName = 'football.ua'; 
+</script> 
 
-<!--popups-->
+<!--popups-->  
 	<div class="popup enter-popup pseudologin useractionpopup" title="ВХОД НА САЙТ" id="loginblock" style="display:none;">
-		<div class="popup-content">
+		<div class="popup-content"> 
 			<div class="edit-form" id="logincontent">
 				<label class="label">
 					<div>E-mail:</div>
@@ -812,7 +814,7 @@ Login.SiteName = 'football.ua';
 				</label>
 				<a href="#" id="forgot-link" class="remind">Забыли пароль?</a>
                 <p class="error">&nbsp;</p>
-			</div>
+			</div> 
 		</div>
 		<div class="ui-dialog-buttonpane">
 			<label class="label remember">
@@ -821,10 +823,10 @@ Login.SiteName = 'football.ua';
 			</label>
 			<button class="submit" onclick="Login.Autorization(); return false;" tabindex="3">вход</button>
 		</div>
+        
+	</div> <!--enter-popup--> 
 
-	</div> <!--enter-popup-->
-
-	<div class="popup  enter-popup registration-popup pseudoregister useractionpopup" title="РЕГИСТРАЦИЯ НА САЙТЕ" id="register" style="display:none;">
+	<div class="popup  enter-popup registration-popup pseudoregister useractionpopup" title="РЕГИСТРАЦИЯ НА САЙТЕ" id="register" style="display:none;"> 
 		<div class="registration-info">
 			<h3>Преимущества регистрации на football.ua:</h3>
 			<ul>
@@ -836,7 +838,7 @@ Login.SiteName = 'football.ua';
 			<div class="icon"></div>
 		</div>
 
-        <div class="popup-content">
+        <div class="popup-content"> 
 			<div class="edit-form input-area"  id="registercontent">
 				<label class="label">
 					<div>E-mail:</div>
@@ -855,7 +857,7 @@ Login.SiteName = 'football.ua';
 					<input class="form-input"   type="password" placeholder="Повторите пароль" id="password2" tabindex="3" onblur="Login.ValidPassword(2);" onkeydown="Login.ValidateNewUser(4,event);" />
 				</label>
                 <p class="error">&nbsp;</p>
-			</div>
+			</div>                
             <div class="g-recaptcha" data-sitekey="6Lftc2gUAAAAAGjG5_XH7yQ8aJYcku1vmqPTSXJ6"></div>
 		</div>
 		<div class="ui-dialog-buttonpane">
@@ -869,344 +871,334 @@ Login.SiteName = 'football.ua';
 	</div> <!--registration-popup-->
 
     <div class="popup enter-popup password useractionpopup" title="ВОССТАНОВЛЕНИЕ ПАРОЛЯ" id="recovery" style="display:none;">
-			<div class="popup-content" id="recoverycontent">
+			<div class="popup-content" id="recoverycontent"> 
 				<div class="edit-form" >
 					<label class="label">
 						<div>Введите адрес вашей электронной почты</div>
 						<input class="form-input" type="email" id="recoveryemail" placeholder="Укажите E-mail" />
-					</label>
-				</div>
+					</label> 
+				</div> 
 			</div>
-			<div class="ui-dialog-buttonpane">
+			<div class="ui-dialog-buttonpane"> 
 				<button class="submit" onclick="Login.Recovery();">подтвердить</button>
 			</div>
 		</div>
 
 
-	<!--popups-->
+	<!--popups--> 
                     <div class="header-search">
                         <input type="text" id="searchInput" value="" />
                         <a href="#" class="search-button" id="searchInputButton" onclick="Main.Search(); return false;"></a>
                     </div> <!--search-->
                 </div>
             </div> <!--wrapper-->
-            <nav class="header-nav">
-
-
+            <nav class="header-nav"> 
+                
+ 
 <ul>
-
+ 
     <li>
-
-        <a href="https://football.ua/"
+    
+        <a href="https://football.ua/" 
             style="" class="active ">Головна </a>
-
+    
     </li>
-
+ 
     <li>
-
-        <a href="https://football.ua/newsarc/"
+    
+        <a href="https://football.ua/newsarc/" 
             style="" class=" ">Новини </a>
-
+    
     </li>
-
+ 
     <li>
-
-        <a href="https://football.ua/scoreboard/"
+    
+        <a href="https://football.ua/scoreboard/" 
             style="" class=" ">Матчі та турніри </a>
-
+    
     </li>
-
+ 
     <li>
-
-        <a href="https://football.ua/video/"
+    
+        <a href="https://football.ua/video/" 
             style="" class=" ">Відео </a>
-
+    
     </li>
-
+ 
     <li>
-
-        <a href="https://football.ua/galleries/"
+    
+        <a href="https://football.ua/galleries/" 
             style="" class=" ">Фото </a>
-
+    
     </li>
-
+ 
     <li>
-
-        <a href="https://football.ua/tvschedule/"
+    
+        <a href="https://football.ua/tvschedule/" 
             style="" class=" ">Футбол на ТБ </a>
-
+    
     </li>
-
+ 
     <li>
-
-        <a href="https://football.ua/conferences/"
+    
+        <a href="https://football.ua/conferences/" 
             style="" class=" ">Конференції </a>
-
+    
     </li>
-
+ 
     <li>
-
+    
         <a href="http://blog.isport.ua/football/all/" target="_blank"
             style="" class=" ">Блоги </a>
-
+    
     </li>
-
+ 
     <li>
-
+    
         <a href="https://mediadim.com.ua/donate/" target="_blank"
             style="color:#1eac20" class=" ">допомогти ФУТБОЛУ </a>
-
+    
     </li>
-
-</ul>
+ 
+</ul>     
             </nav>
         </div>
         </header>
 
         <section class="page">
-
-
+            
+            
             <menu id="ctl00_menu" class="left-menu">
     <li class="">
-
-        <a href="https://football.ua/footballtest.html"
+    
+        <a href="https://football.ua/footballtest.html" 
             style="" class="">Тести</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/life-principles.html"
+    
+        <a href="https://football.ua/life-principles.html" 
             style="" class="">Правила життя</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/bitva-redaktsiy.html"
+    
+        <a href="https://football.ua/bitva-redaktsiy.html" 
             style="" class="">Битва редакцій</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/bet-ratings.html"
+    
+        <a href="https://football.ua/bet-ratings.html" 
             style="" class="">Рейтинг букмекерів</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/worldcup.html"
+    
+        <a href="https://football.ua/worldcup.html" 
             style="" class="">Чемпіонат світу</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/nationsleague.html"
+    
+        <a href="https://football.ua/nationsleague.html" 
             style="" class="">Ліга націй </a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/africancup.html"
+    
+        <a href="https://football.ua/africancup.html" 
             style="" class="">Кубок Африки</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
-    <li class="active">
-
-        <a href="https://football.ua/ukraine.html"
+    
+    <li class="">
+    
+        <a href="https://football.ua/ukraine.html" 
             style="" class="">Україна</a>
-
+    
+    </li>
+    
+    <li class="">
+    
+        <a href="https://football.ua/england.html" 
+            style="" class="">Англія</a>
+    
+    </li>
+    
+    <li class="">
+    
+        <a href="https://football.ua/germany.html" 
+            style="" class="">Німеччина</a>
+    
+    </li>
+    
+    <li class="active">
+    
+        <a href="https://football.ua/spain.html" 
+            style="" class="">Іспанія</a>
+    
         <ul class="inner-list">
-
+        
             <li class=" "
                 style="">
-                <a href="https://football.ua/ukraine.html" >Новини</a>
+                <a href="https://football.ua/spain.html" >Новини</a>
             </li>
-
+        
             <li class=" "
                 style="">
-                <a href="https://football.ua/ukraine/results/" >Розклад. УПЛ</a>
+                <a href="https://football.ua/spain/results/" >Розклад. Ла Ліга</a>
             </li>
-
+        
             <li class=" "
                 style="">
-                <a href="https://football.ua/ukraine/statistics.html" >Статистика</a>
+                <a href="https://football.ua/spain/statistics.html" >Статистика</a>
             </li>
-
+        
             <li class="selected "
                 style="">
-                <a href="https://football.ua/ukraine/table.html" >Таблиця</a>
+                <a href="https://football.ua/spain/table.html" >Таблиця</a>
             </li>
-
+        
             <li class=" "
                 style="">
-                <a href="https://football.ua/ukraine1league.html" >Перша ліга</a>
+                <a href="https://football.ua/spain/cup/" >Кубок Іспанії</a>
             </li>
-
-            <li class=" "
-                style="">
-                <a href="https://football.ua/ukraine2league.html" >Друга ліга</a>
-            </li>
-
-            <li class=" "
-                style="">
-                <a href="https://football.ua/ukraine/cup/" >Кубок України</a>
-            </li>
-
+        
         </ul>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/england.html"
-            style="" class="">Англія</a>
-
-    </li>
-
-    <li class="">
-
-        <a href="https://football.ua/germany.html"
-            style="" class="">Німеччина</a>
-
-    </li>
-
-    <li class="">
-
-        <a href="https://football.ua/spain.html"
-            style="" class="">Іспанія</a>
-
-    </li>
-
-    <li class="">
-
-        <a href="https://football.ua/italy.html"
+    
+        <a href="https://football.ua/italy.html" 
             style="" class="">Італія</a>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/netherlands.html"
+    
+        <a href="https://football.ua/netherlands.html" 
             style="" class="">Нідерланди</a>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/portugal.html"
+    
+        <a href="https://football.ua/portugal.html" 
             style="" class="">Португалія</a>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/turkey.html"
+    
+        <a href="https://football.ua/turkey.html" 
             style="" class="">Туреччина</a>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/france.html"
+    
+        <a href="https://football.ua/france.html" 
             style="" class="">Франція</a>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/countrieselse.html"
+    
+        <a href="https://football.ua/countrieselse.html" 
             style="" class="">Інші</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://champions.football.ua/"
+    
+        <a href="https://champions.football.ua/" 
             style="" class="">Ліга чемпіонів</a>
-
+    
     </li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/uefa.html"
+    
+        <a href="https://football.ua/uefa.html" 
             style="" class="">Ліга Європи</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/conferenceleague.html"
+    
+        <a href="https://football.ua/conferenceleague.html" 
             style="" class="">Ліга конференцій</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/futsal.html"
+    
+        <a href="https://football.ua/futsal.html" 
             style="" class="">Футзал </a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/fiction.html"
+    
+        <a href="https://football.ua/fiction.html" 
             style="" class="">Чтиво</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
-
+    
     <li class="">
-
-        <a href="https://football.ua/fansector.html"
+    
+        <a href="https://football.ua/fansector.html" 
             style="" class="">Фан-сектор</a>
-
+    
     </li>
-
+    
     <li class="menu-separator"></li>
     </menu>
             <section class="content">
                 <a title="Вверх" href="#" id="scroll-top"></a>
-
+                
                 <div class="main-left">
                     <div id="ctl00_columnTop" class="col-top">
 
 <article class="tournament-article">
-    <h3 class="feed-header">Україна. Прем'єр-ліга , 2022 - 2023</h3>
+    <h3 class="feed-header">Іспанія. Ла Ліга, 2022 - 2023</h3>
     <table class="main-tournament-table">
         <tr>
             <th class="num" title="Место команды">#</th>
             <th></th>
-            <th class="date" title="Положение команд на 30 июня 2022">
-                30 июня 2022
+            <th class="date" title="Положение команд на 01 июля 2022">
+                01 июля 2022
             </th>
             <th class="games" title="Игры">и</th>
             <th class="win" title="Выигрыши">в</th>
@@ -1224,12 +1216,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">1</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/533.png" alt="Верес" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo/0x20/399.png" alt="Альмерія" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/533-veres.html">Верес</a>
+                <a href="https://football.ua/club/399-almeria.html">Альмерія</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1240,7 +1232,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1248,12 +1240,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">2</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/78.png" alt="Ворскла" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/53.png" alt="Атлетік" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/78-vorskla.html">Ворскла</a>
+                <a href="https://football.ua/club/53-athletic.html">Атлетік</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1264,7 +1256,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1272,12 +1264,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">3</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/23.png" alt="Динамо Київ" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/56.png" alt="Атлетіко" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/23-dynamo.html">Динамо Київ</a>
+                <a href="https://football.ua/club/56-atletico.html">Атлетіко</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1288,7 +1280,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1296,12 +1288,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">4</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1303.png" alt="Дніпро-1" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/51.png" alt="Барселона" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1303-dnepr-1.html">Дніпро-1</a>
+                <a href="https://football.ua/club/51-barcelona.html">Барселона</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1312,7 +1304,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1320,12 +1312,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">5</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/219.png" alt="Зоря" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo/0x20/62.png" alt="Бетіс" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/219-zorya.html">Зоря</a>
+                <a href="https://football.ua/club/62-betis.html">Бетіс</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1336,7 +1328,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1344,12 +1336,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">6</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1209.png" alt="Інгулець" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/64.png" alt="Валенсія" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1209-ingulec.html">Інгулець</a>
+                <a href="https://football.ua/club/64-valencia.html">Валенсія</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1360,7 +1352,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1368,12 +1360,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">7</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1207.png" alt="Колос" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/401.png" alt="Вальядолід" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1207-kolos.html">Колос</a>
+                <a href="https://football.ua/club/401-valladolid.html">Вальядолід</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1384,7 +1376,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1392,12 +1384,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">8</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/72.png" alt="Кривбас" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/65.png" alt="Вільярреал" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/72-krivbass.html">Кривбас</a>
+                <a href="https://football.ua/club/65-villarreal.html">Вільярреал</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1408,7 +1400,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1416,12 +1408,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">9</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/293.png" alt="Львів" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/885.png" alt="Ельче" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/293-fk-lvov.html">Львів</a>
+                <a href="https://football.ua/club/885-elche.html">Ельче</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1432,7 +1424,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1440,12 +1432,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">10</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1670.png" alt="Металіст" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo/0x20/52.png" alt="Еспаньйол" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1670-metallist.html">Металіст</a>
+                <a href="https://football.ua/club/52-espanyol.html">Еспаньйол</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1456,7 +1448,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1464,12 +1456,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">11</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1312.png" alt="Металіст 1925" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1169.png" alt="Жирона" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1312-metallist-1925.html">Металіст 1925</a>
+                <a href="https://football.ua/club/1169-girona.html">Жирона</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1480,7 +1472,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1488,12 +1480,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">12</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1363.png" alt="Минай" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/76.png" alt="Кадіс" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1363-minajj.html">Минай</a>
+                <a href="https://football.ua/club/76-kadis.html">Кадіс</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1504,7 +1496,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1512,12 +1504,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">13</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/406.png" alt="Олександрія" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/58.png" alt="Мальорка" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/406-aleksandrija.html">Олександрія</a>
+                <a href="https://football.ua/club/58-mallorca.html">Мальорка</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1528,7 +1520,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1536,12 +1528,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">14</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/1302.png" alt="Рух" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/59.png" alt="Осасуна" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/1302-rukh.html">Рух</a>
+                <a href="https://football.ua/club/59-osasuna.html">Осасуна</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1552,7 +1544,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1560,12 +1552,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">15</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/73.png" alt="Чорноморець" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo/0x20/764.png" alt="Райо Вальєкано" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/73-chornomorets.html">Чорноморець</a>
+                <a href="https://football.ua/club/764-rayo-vallecano.html">Райо Вальєкано</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1576,7 +1568,7 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
-
+    
             </td>
 		</tr>
 
@@ -1584,12 +1576,12 @@ Login.SiteName = 'football.ua';
 		<tr>
 			<td class="num">16</td>
 			<td class="logo">
-
-                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/24.png" alt="Шахтар" />
-
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo/0x20/57.png" alt="Реал Мадрид" />
+    
             </td>
 			<td class="team">
-                <a href="https://football.ua/club/24-shakhtar.html">Шахтар</a>
+                <a href="https://football.ua/club/57-real-madrid.html">Реал Мадрид</a>
             </td>
             <td class="games">0</td>
             <td class="win">0</td>
@@ -1600,13 +1592,109 @@ Login.SiteName = 'football.ua';
             <td class="diff">0</td>
             <td class="score">0</td>
 			<td class="form">
+    
+            </td>
+		</tr>
 
+
+		<tr>
+			<td class="num">17</td>
+			<td class="logo">
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/60.png" alt="Реал Сосьєдад" />
+    
+            </td>
+			<td class="team">
+                <a href="https://football.ua/club/60-real-sociedad.html">Реал Сосьєдад</a>
+            </td>
+            <td class="games">0</td>
+            <td class="win">0</td>
+            <td class="draw">0</td>
+            <td class="lose">0</td>
+            <td class="goal">0</td>
+            <td class="miss">0</td>
+            <td class="diff">0</td>
+            <td class="score">0</td>
+			<td class="form">
+    
+            </td>
+		</tr>
+
+
+		<tr>
+			<td class="num">18</td>
+			<td class="logo">
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/63.png" alt="Севілья" />
+    
+            </td>
+			<td class="team">
+                <a href="https://football.ua/club/63-sevilla.html">Севілья</a>
+            </td>
+            <td class="games">0</td>
+            <td class="win">0</td>
+            <td class="draw">0</td>
+            <td class="lose">0</td>
+            <td class="goal">0</td>
+            <td class="miss">0</td>
+            <td class="diff">0</td>
+            <td class="score">0</td>
+			<td class="form">
+    
+            </td>
+		</tr>
+
+
+		<tr>
+			<td class="num">19</td>
+			<td class="logo">
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/67.png" alt="Сельта" />
+    
+            </td>
+			<td class="team">
+                <a href="https://football.ua/club/67-celta.html">Сельта</a>
+            </td>
+            <td class="games">0</td>
+            <td class="win">0</td>
+            <td class="draw">0</td>
+            <td class="lose">0</td>
+            <td class="goal">0</td>
+            <td class="miss">0</td>
+            <td class="diff">0</td>
+            <td class="score">0</td>
+			<td class="form">
+    
+            </td>
+		</tr>
+
+
+		<tr>
+			<td class="num">20</td>
+			<td class="logo">
+    
+                <img src="https://s.ill.in.ua/i/football/team/logo_sm/0x20/54.png" alt="Хетафе" />
+    
+            </td>
+			<td class="team">
+                <a href="https://football.ua/club/54-getafe.html">Хетафе</a>
+            </td>
+            <td class="games">0</td>
+            <td class="win">0</td>
+            <td class="draw">0</td>
+            <td class="lose">0</td>
+            <td class="goal">0</td>
+            <td class="miss">0</td>
+            <td class="diff">0</td>
+            <td class="score">0</td>
+			<td class="form">
+    
             </td>
 		</tr>
 
 
     </table>
-</article><div class='separator'></div>
+</article>
 
 <div class="banner" style="
 width:630px;
@@ -1619,9 +1707,9 @@ configurable:!1,writable:!1,value:[]}),w("https://go.rcvlink.com/static/main.js"
 </script>
 
 </div><div class='separator'></div></div>
-
-
-
+                    
+                    
+                    
                 </div>
                 <div id="ctl00_mainRight" class="main-right">
 
@@ -1631,7 +1719,7 @@ configurable:!1,writable:!1,value:[]}),w("https://go.rcvlink.com/static/main.js"
 ">
 <div id="holder_300x100_23"></div>
 
-<!--
+<!--  
 <div id="admixer_premium_inner" data-zone="ef250544-94f1-4340-bde6-9bddbe8b06d4"></div>
 -->
 <div id='zone_1235099423'></div>
@@ -1651,98 +1739,236 @@ configurable:!1,writable:!1,value:[]}),w("https://go.rcvlink.com/static/main.js"
 
 </div><div class='separator'></div>
 
-<article class="author-block">
-    <h3 class="feed-header">Авторские материалы</h3>
+<div class="banner" style="
+width:300px;
 
-    <div class="author-item">
+">
+<div id="holder_300x200_97"></div><br />
+<div id="holder_300x250_98"></div><br />
+<!--
+<div id="holder_240x350_75"></div><br />
+-->
+<div id='zone_1641813657'></div>
+<div id="holder_300x350_0"></div>
 
-        <a href="https://football.ua/ukraine/481527-shakhtar-kajrat-i-filosofia-totalnogo-futbolu-khto-vin-novyj-trener-zori.html">
-            <img src="https://s.ill.in.ua/i/news/110x72/481/481527.jpg" alt="Патрік ван Леуван, Маккабі Тель-Авів" />
-        </a>
+</div>
 
-        <div class="text">
-            <p class="name">
 
-                <a href="https://football.ua/author/5acd93e8-fc9a-4dcf-99c6-422804f1245e.html">Гліб Скрипченко</a>
-
-            </p>
-            <p class="date">29 июня 2022</p>
-            <h4>
-                <a href="https://football.ua/ukraine/481527-shakhtar-kajrat-i-filosofia-totalnogo-futbolu-khto-vin-novyj-trener-zori.html">Шахтар, Кайрат і філософія &quot;тотального футболу&quot;: хто він, новий тренер Зорі?</a>
-
-                <span class="comments">4</span>
-
-            </h4>
-        </div>
-    </div>
-
-    <div class="author-item">
-
-        <a href="https://football.ua/ukraine/481177-palkin-nikhto-z-inozemciv-ne-prijide-grati-matchi-chempionatu-ukrajini-jakijj-provoditimetsja-vseredini-krajini.html">
-            <img src="https://s.ill.in.ua/i/news/110x72/481/481177.jpg" alt="Сергій Палкін, фото ФК Шахтар Донецьк" />
-        </a>
-
-        <div class="text">
-            <p class="name">
-        Інтерв’ю
-
-            </p>
-            <p class="date">23 июня 2022</p>
-            <h4>
-                <a href="https://football.ua/ukraine/481177-palkin-nikhto-z-inozemciv-ne-prijide-grati-matchi-chempionatu-ukrajini-jakijj-provoditimetsja-vseredini-krajini.html">Палкін: Ніхто з іноземців не приїде грати матчі чемпіонату України, який проводитиметься всередині країни</a>
-
-                <span class="comments">32</span>
-
-            </h4>
-        </div>
-    </div>
-
-    <div class="author-item">
-
-        <a href="https://football.ua/ukraine/481121-lodz-istoriya-ukrajinskogo-slidu-do-matchu-dynamo.html">
-            <img src="https://s.ill.in.ua/i/news/110x72/481/481121.jpg" alt="Олександр Караваєв, Getty Images" />
-        </a>
-
-        <div class="text">
-            <p class="name">
-
-                <a href="https://football.ua/author/5acd93e8-fc9a-4dcf-99c6-422804f1245e.html">Гліб Скрипченко</a>
-
-            </p>
-            <p class="date">22 июня 2022</p>
-            <h4>
-                <a href="https://football.ua/ukraine/481121-lodz-istoriya-ukrajinskogo-slidu-do-matchu-dynamo.html">Лодзь: історія українського сліду до матчу Динамо</a>
-
-                <span class="comments">4</span>
-
-            </h4>
-        </div>
-    </div>
-
-    <div class="author-item">
-
-        <a href="https://football.ua/ukraine/480374-peremozhna-khoda-ukrajini-v-lizi-nacijj-peremoga-nad-virmenijeju-30.html">
-            <img src="https://s.ill.in.ua/i/news/110x72/480/480374.jpg" alt="Збірна України" />
-        </a>
-
-        <div class="text">
-            <p class="name">
-
-                <a href="https://football.ua/author/043206d4-6071-4982-b65c-871769d33d30.html">Сергій Горбаченко</a>
-
-            </p>
-            <p class="date">12 июня 2022</p>
-            <h4>
-                <a href="https://football.ua/ukraine/480374-peremozhna-khoda-ukrajini-v-lizi-nacijj-peremoga-nad-virmenijeju-30.html">Переможна хода України в Лізі націй: як збірна яскраво здолала Вірменію</a>
-
-                <span class="comments">19</span>
-
-            </h4>
-        </div>
-    </div>
-
-    <p class="more"><a href="https://football.ua/author/">все материалы</a></p>
-</article><div class='separator'></div><div class='separator'></div>
+<div class="separator"></div> <!--separator-->
+    
+<article class="news-feed">
+	<h3 class="feed-header rss">Испания. Новости<a class="rss" href="http://football.ua/rss2.ashx"></a></h3>
+	<ul>
+    
+		<li>
+			<div class="time">13:00</div>
+        
+            <a  href="https://football.ua/spain/481744-real-prezentuvav-novu-vijiznu-formu-na-sezon-202223.html">
+        Реал презентував нову виїзну форму на сезон-2022/23
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">08:24</div>
+        
+            <a  href="https://football.ua/spain/481724-gattuzo-viznachiv-kavani-golovnoju-metoju-na-poziciju-forvarda-valensiji.html">
+        Гаттузо визначив Кавані головною метою на позицію форварда Валенсії
+            </a>
+		</li>
+    
+        <li class="news-date">30 июня 2022</li>
+        
+		<li>
+			<div class="time">22:17</div>
+        
+            <a  href="https://football.ua/spain/481712-vrsalko-zalishiv-atletiko.html">
+        Врсалько залишив Атлетіко
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">21:59</div>
+        
+            <a  href="https://football.ua/spain/481711-bavarija-ne-vidpovidaje-na-dzvinki-barseloni-shhodo-transferu-levandovski.html">
+        Баварія не відповідає на дзвінки Барселони щодо трансферу Левандовські
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">18:59</div>
+        
+            <a  href="https://football.ua/spain/481703-barselona-namagajetsja-zirvati-perekhid-rafinji-do-chelsi.html">
+        Барселона намагається зірвати перехід Рафіньї до Челсі
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">18:35</div>
+        
+            <a  href="https://football.ua/spain/481702-barselona-gotujetsja-ogolositi-pro-perekhodi-kristensena-ta-kessje.html">
+        Барселона готується оголосити про переходи Крістенсена та Кессьє
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">18:24</div>
+        
+            <a  href="https://football.ua/spain/481701-renn-vijavljaje-interes-do-umtiti.html">
+        Ренн виявляє інтерес до Умтіті
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">16:10</div>
+        
+            <a  href="https://football.ua/spain/481691-ljuk-de-jjong-poproshhavsja-iz-barselonoju.html">
+        Люк Де Йонг попрощався із Барселоною
+            </a>
+		</li>
+    
+		<li>
+			<div class="time important-time">15:10</div>
+        
+            <a  href="https://football.ua/spain/481686-barselona-ogolosila-pro-pririst-kapitalu-za-rakhunok-prodazhu-tv-prav.html">
+        Барселона оголосила про приріст капіталу за рахунок продажу ТВ-прав
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">12:55</div>
+        
+            <a  href="https://football.ua/spain/481673-zakhisnik-reala-perejjde-do-lacio-za-pjat-miljjoniv-jevro.html">
+        Захисник Реала перейде до Лаціо за п'ять мільйонів євро
+            </a>
+		</li>
+    
+		<li>
+			<div class="time important-time">12:41</div>
+        
+            <a  href="https://football.ua/spain/481674-atletik-ogolosiv-pro-povernennja-valverde.html">
+        Атлетік оголосив про повернення Вальверде
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">12:24</div>
+        
+            <a  href="https://football.ua/spain/481671-majjoral-ja-jakos-spiznivsja-na-chotiri-khvilini-a-ronaldu-skazav-shho-maju-prijizhdzhati-na-godinu-ranishe.html">
+        Майораль: Я якось спізнився на чотири хвилини, а Роналду сказав, що маю приїжджати на годину раніше
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">11:55</div>
+        
+            <a  href="https://football.ua/spain/481669-barselona-otrimala-vidmovu-vid-bavariji-stosovno-chergovoji-propoziciji-shhodo-levandovski.html">
+        Барселона отримала відмову від Баварії стосовно чергової пропозиції щодо Левандовські
+            </a>
+		</li>
+    
+		<li>
+			<div class="time important-time">11:55</div>
+        
+            <a  href="https://football.ua/spain/481667-atletiko-prodovzhiv-orendu-grizmanna.html">
+        Атлетіко продовжив оренду Грізманна
+            </a>
+		</li>
+    
+        <li class="news-date">29 июня 2022</li>
+        
+		<li>
+			<div class="time">17:20</div>
+        
+            <a  href="https://football.ua/spain/481619-atletiko-ne-mozhe-zarejestruvati-vitselja-cherez-limit-zarplat.html">
+        Атлетіко не може зареєструвати Вітселя через ліміт зарплат
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">16:20</div>
+        
+            <a  href="https://football.ua/spain/481615-de-jjong-ne-khoche-perekhoditi-v-manchester-junajjted.html">
+        Де Йонг не хоче переходити в Манчестер Юнайтед
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">16:16</div>
+        
+            <a  href="https://football.ua/spain/481614-depajj-rozgljadaje-variant-zalishiti-barselonu.html">
+        Депай розглядає варіант залишити Барселону
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">13:04</div>
+        
+            <a  href="https://football.ua/spain/481601-gavi-blizkijj-do-prodovzhennja-kontraktu-z-barselonoju.html">
+        Гаві близький до продовження контракту з Барселоною
+            </a>
+		</li>
+    
+		<li>
+			<div class="time important-time">11:13</div>
+        
+            <a  href="https://football.ua/spain/481592-levandovski-otrimav-povidomlennja-vid-barseloni-pro-novu-propoziciju-dlja-bavariji.html">
+        Левандовські отримав повідомлення від Барселони про нову пропозицію для Баварії
+            </a>
+		</li>
+    
+        <li class="news-date">28 июня 2022</li>
+        
+		<li>
+			<div class="time">22:45</div>
+        
+            <a  href="https://football.ua/spain/481573-barselona-prodast-chastinu-svojikh-tv-prav.html">
+        Барселона продасть частину своїх ТВ-прав американській компанії
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">21:31</div>
+        
+            <a  href="https://football.ua/spain/481569-barselona-gotuje-novu-propoziciju-shhodo-levandovski.html">
+        Барселона готує нову пропозицію щодо Левандовські
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">20:50</div>
+        
+            <a  href="https://football.ua/spain/481564-barkhuana-na-postu-golovnogo-trenera-barseloni-b-zaminit-kolishnijj-futbolist-klubu.html">
+        Бархуана на посту головного тренера Барселони Б замінить колишній футболіст клубу
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">19:20</div>
+        
+            <a  href="https://football.ua/spain/481559-real-rozgljadaje-kandidaturu-rajjsa.html">
+        Реал розглядає кандидатуру Райса
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">16:01</div>
+        
+            <a  href="https://football.ua/spain/481547-milan-juventus-jj-arsenal-asensio-prodovzhuje-shukati-klub.html">
+        Мілан, Ювентус чи Арсенал: Асенсіо продовжує шукати клуб
+            </a>
+		</li>
+    
+		<li>
+			<div class="time">15:59</div>
+        
+            <a  href="https://football.ua/spain/481546-sevilja-zrobila-propoziciju-lacio-shhodo-pidpisannja-lujisa-alberto.html">
+        Севілья зробила пропозицію Лаціо щодо підписання Луїса Альберто
+            </a>
+		</li>
+    
+	</ul>
+</article> <!--news-feed-->
+<div class='separator'></div>
 
 <div class="banner" style="
 
@@ -1765,8 +1991,8 @@ width:300px;
 <br /><br />
 <div id="holder_300x350_1"></div>
 
-</div><div class='separator'></div><div class='separator'></div></div>
-
+</div><div class='separator'></div></div>
+                
             </section>
             <div id="ctl00_wideBottom" class="wide-bottom">
 
@@ -1871,11 +2097,11 @@ width:300px;
             <center>
 <p><strong>З питань реклами звертайтесь:</strong></p>
 
-<p><a href="/cdn-cgi/l/email-protection#fb899e90979a969ad6888b94898fbb8e9693d5989496d58e9a"><span class="__cf_email__" data-cfemail="8dffe8e6e1ece0eca0fefde2fff9cdf8e0e5a3eee2e0a3f8ec">[email&#160;protected]</span></a>&nbsp;Тел: +38 (044) 207-33-05, +38 (044) 207-97-00</p>
+<p><a href="/cdn-cgi/l/email-protection#fc8e9997909d919dd18f8c938e88bc899194d29f9391d2899d"><span class="__cf_email__" data-cfemail="7507101e191418145806051a07013500181d5b161a185b0014">[email&#160;protected]</span></a>&nbsp;Тел: +38 (044) 207-33-05, +38 (044) 207-97-00</p>
 
 <p>&nbsp;</p>
 
-<p>E-mail редакції: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e48d8a828ba4828b8b9086858888ca9185ca">[email&#160;protected]</a></p>
+<p>E-mail редакції: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb6b1b9b09fb9b0b0abbdbeb3b3f1aabef1">[email&#160;protected]</a></p>
 </center>
 
 <center>&copy; 2006-2022 ТОВ&nbsp;&quot;ВИДАВНИЦТВО УКРАЇНСЬКИЙ МЕДІА ДІМ&quot;. Всі права захищені.</center>
@@ -1893,11 +2119,13 @@ width:300px;
         </footer>
 
         <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://football.ua/js/bottom.js?v=20160629"></script>
-        <script type="text/javascript">new holder("holder_728x90_88",{block:5488});</script><script type="text/javascript">
+        <script type="text/javascript">
+new holder("holder_728x90_56",{block:5552});
+</script><script type="text/javascript">
 new holder("holder_300x100_23",{block:8623});
 </script>
 
-<!--
+<!--  
 <script>(window.admixerAds = window.admixerAds || []).push("admixer_premium_inner");</script>
 -->
 <script>
@@ -1919,7 +2147,30 @@ new holder("holder_300x100_36",{block:5136});
 new holder("holder_300x100_75",{block:8075});
 new holder("holder_300x100_33",{block:5333});
 new holder("holder_300x200_96",{block:8596});
-</script><script type="text/javascript">
+</script><script>
+    (function(w,d,o,g,r,a,m){
+        var cid='zone_1641813657';
+        w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
+        function e(b,w,r){if((w[r+'h']=b.pop())&&!w.ABN){
+            var a=d.createElement(o),p=d.getElementsByTagName(o)[0];a.async=1;
+            a.src='https://cdn.'+w[r+'h']+'/libs/e.js';a.onerror=function(){e(g,w,r)};
+            p.parentNode.insertBefore(a,p)}}e(g,w,r);
+        w[r](cid,{id:1641813657,domain:w[r+'h']});
+    })(window,document,'script',['umh.ua'],'ABNS');
+</script>
+
+<script type="text/javascript">
+new holder("holder_300x200_97",{block:8597});
+new holder("holder_300x250_98",{block:8598});
+new holder("holder_300x350_0",{block:8100});
+</script>
+
+<!--
+<script type="text/javascript">
+new holder("holder_240x350_75",{block:2175});
+</script>
+-->
+<script type="text/javascript">
 new holder("holder_300x250_77",{block:6177});
 </script><script type="text/javascript">
     (function(w, d, n, s, t) {
@@ -1955,17 +2206,13 @@ new holder("holder_300x350_1",{block:8101});
     })(window,document,'script',['umh.ua'],'ABNS');
 </script>
 
-<!--
+<!--  
 <div id="admixer_mobile_inner" data-zone="7c5a18ac-1ee3-4ec0-8fb6-ed7ad9868112"></div>
 <script>(window.admixerAds = window.admixerAds || []).push('admixer_mobile_inner');</script>
 -->
 
-
-
-<div>
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
-</div></form>
+        
+    </form>
     <div class="columnBlock">
 <table class="footerCounters" style="width:400px;margin: 0 auto;">
 	<tbody>
@@ -2078,7 +2325,7 @@ p.appendChild(s);
 </script>
 <!-- /MMI CMeter -->
 
-<!--
+<!--  
 <div id="admixer_rm_inner" data-zone="87a30e83-131d-42da-a0a4-07c96cb4cf68"></div>
 <script>(window.admixerAds = window.admixerAds || []).push('admixer_rm_inner');</script>
 -->
@@ -2096,7 +2343,7 @@ p.appendChild(s);
     })(window,document,'script',['umh.ua'],'ABNS');
 </script>
 
-<script type="text/javascript" src="//h.holder.com.ua/s?b284&tj&hfootball.ua&r51614"></script>
+<script type="text/javascript" src="//h.holder.com.ua/s?b284&tj&hfootball.ua&r51614"></script>  
 <script type="text/javascript" src="//h.holder.com.ua/s?b3267&tj&c1"></script>
 <script language="JavaScript" src="//h.holder.com.ua/s?b3838&tj&c1"></script>
 <script language="JavaScript" src="//h.holder.com.ua/s?b3822&tj&c1"></script>
@@ -2127,11 +2374,11 @@ d.cookie="b=1; path=/";if(d.cookie.indexOf('b=')!=-1&&!(n.indexOf('Safari')!=-1&
 l+="&"+escape((self!=top)?"f"+d.referrer:"h"+wl.href);
 d.write('<scr'+'ipt type="text/javascript" src="'+p+'//h.holder.com.ua/s?tj&b7189'+l+'"></scr'+'ipt>');})();
 </script>
-
-
+ 
+	
 	<div id="gdpr-disclaimer"></div>
     <script type="text/javascript" src="//ui.ill.in.ua/s/disclaimer.min.js" data-rules="https://football.ua/countrieselse/396483-politika-u-sferi-konfidencijjnosti-i-personalnikh-danikh.html"></script>
     </div>
-    <div id="popup-back"></div>
+    <div id="popup-back"></div> 
 </body>
 </html>
