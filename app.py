@@ -85,10 +85,7 @@ for scores_name, scores_href in all_scores.items():
     all_table = soup.find(class_="main-tournament-table").find_all("tr")
     all_table_title = all_table[0]
     place = all_table_title.find(class_='num').text
-    date = ''
-    for item in all_table_title.find(class_='date').text:
-        if item.isdigit() or item.isalpha():
-            date += item
+    date = all_table_title.find(class_='date').text.strip()
     games = all_table_title.find(class_='games').text
     win = all_table_title.find(class_='win').text
     draw = all_table_title.find(class_='draw').text
